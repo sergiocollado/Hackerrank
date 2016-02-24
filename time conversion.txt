@@ -1,0 +1,28 @@
+//Given a time in AM/PM format, convert it to military (24-hour) time.
+
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <iomanip>
+using namespace std;
+
+int main(){
+    string time;
+    int ihour, imin, isec;
+    cin >> time;
+    
+    ihour= atoi(&time[0]);
+    imin = atoi(&time[3]);
+    isec = atoi(&time[6]);
+ 
+    if(time[8]=='P' && ihour!=12)   ihour+=12;
+    
+    if(time[8]=='A' && ihour==12)   ihour=0;
+    
+    
+    cout<<setw(2)<<setfill('0')<<ihour<<":"<<setw(2)<<setfill('0')<<imin<<":"<<setw(2)<<setfill('0')<<isec;
+        
+    return 0;
+}
