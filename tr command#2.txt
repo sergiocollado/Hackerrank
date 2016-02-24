@@ -1,0 +1,5 @@
+#http://www.thegeekstuff.com/2012/12/linux-tr-command/
+#In a given fragment of text, delete all the lowercase characters a−za−z.
+tr -d [:lower:]
+#or
+tr -d a-z
